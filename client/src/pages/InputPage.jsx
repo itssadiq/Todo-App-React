@@ -1,26 +1,25 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const InputPage = () => {
   return (
-    <div className="main-03 js-main-3">
+    <div className="main-03">
       <input
         type="text"
-        className="task-input js-task-input"
+        className="task-input"
         placeholder="Write a task..."
         required
       />
-      <input type="date" className="task-date js-task-date" required />
+      <input type="date" className="task-date" required />
       <input
         type="text"
-        className="task-category js-task-category"
+        className="task-category"
         placeholder="Write Category..."
         required
       />
       <div className="btn-container">
-        <button className="add-button js-add-button">Add</button>
+        <button className="add-button">Add</button>
         <Link to="/home">
-          <button className="back-button js-back-button">Back</button>
+          <button className="back-button">Back</button>
         </Link>
       </div>
     </div>
