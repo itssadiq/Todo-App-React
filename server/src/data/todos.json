@@ -1,0 +1,17 @@
+[
+  {
+    "task": "Watch TV",
+    "dueDate": "2025-11-30",
+    "category": "Personal"
+  },
+  {
+    "task": "Complete Project",
+    "dueDate": "2025-11-30",
+    "category": "Study"
+  },
+  {
+    "task": "Go for a walk",
+    "dueDate": "2025-11-29",
+    "category": "Exercise"
+  }
+]
