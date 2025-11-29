@@ -3,18 +3,28 @@
     "task": "Watch TV",
     "dueDate": "2025-11-30",
     "category": "Personal",
-    "id": 1
+    "id": 1,
+    "completed": false
   },
   {
     "task": "Complete Project",
     "dueDate": "2025-11-30",
     "category": "Study",
-    "id": 2
+    "id": 2,
+    "completed": false
   },
   {
     "task": "Go for a walk",
     "dueDate": "2025-11-29",
     "category": "Exercise",
-    "id": 3
+    "id": 3,
+    "completed": false
+  },
+  {
+    "task": "Beat Talha",
+    "dueDate": "2025-11-30",
+    "category": "Personal",
+    "id": 4,
+    "completed": false
   }
 ]
