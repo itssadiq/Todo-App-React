@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import DateBox from "../dates/DateBox";
+import TasksList from "../components/TasksList";
 
-const HomePage = () => {
+const HomePage = ({ todos }) => {
   return (
     <div className="main-02">
       <DateBox />
@@ -13,7 +14,7 @@ const HomePage = () => {
       <div className="flex">
         <p className="category-name">All Tasks</p>
       </div>
-      <div className="task-list"></div>
+      <TasksList todos={todos} />
 
       <div className="input-div">
         <Link to="/input">

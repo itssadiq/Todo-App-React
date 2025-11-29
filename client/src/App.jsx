@@ -21,13 +21,11 @@ function App() {
     fetchTodos();
   }, []);
 
-  console.log(todos);
-
   return (
     <>
       <Routes>
         <Route index element={<WelcomePage />} />
-        <Route path="home" element={<HomePage />} />
+        <Route path="home" element={<HomePage todos={todos} />} />
         <Route path="input" element={<InputPage />} />
       </Routes>
     </>
