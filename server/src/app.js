@@ -28,6 +28,23 @@ app.post("/todos", (req, res) => {
   });
 });
 
+app.patch("/todos", (req, res) => {
+  const id = req.body.id;
+  const edit = todos.find((todo) => {
+    if (todo.id === id) {
+      todo.completed = true;
+    }
+  });
+
+  res.send(todos[id - 1]);
+
+  const filePath = path.join(__dirname, "data", "todos.json");
+
+  fs.writeFile(filePath, JSON.stringify(todos), (err, data) => {
+    return res.json({ message: "Todo Added" });
+  });
+});
+
 app.listen(PORT, () => {
   console.log("Server is running on Port", PORT);
 });

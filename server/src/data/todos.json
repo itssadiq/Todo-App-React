@@ -1,1 +1,23 @@
-[{"task":"Watch TV","dueDate":"2025-11-30","category":"Personal","id":1,"completed":false},{"task":"Test","dueDate":"2025-12-12","category":"Test","id":2,"completed":false}]
+[
+    {
+        "task": "Watch TV",
+        "dueDate": "2025-11-30",
+        "category": "Personal",
+        "id": 1,
+        "completed": true
+    },
+    {
+        "task": "Test",
+        "dueDate": "2025-12-12",
+        "category": "Test",
+        "id": 2,
+        "completed": true
+    },
+    {
+        "task": "Sadiq",
+        "dueDate": "2025-12-12",
+        "category": "Personal",
+        "id": 3,
+        "completed": false
+    }
+]
