@@ -8,16 +8,15 @@ import { useEffect, useState } from "react";
 function App() {
   const [todos, setTodos] = useState([]);
 
+  async function fetchTodos() {
+    // TODO: Add error handling here.
+    const todos = await fetch("http://localhost:3000/todos");
+
+    const data = await todos.json();
+
+    setTodos(data);
+  }
   useEffect(() => {
-    async function fetchTodos() {
-      // TODO: Add error handling here.
-      const todos = await fetch("http://localhost:3000/todos");
-
-      const data = await todos.json();
-
-      setTodos(data);
-    }
-
     fetchTodos();
   }, []);
 
@@ -26,7 +25,7 @@ function App() {
       <Routes>
         <Route index element={<WelcomePage />} />
         <Route path="home" element={<HomePage todos={todos} />} />
-        <Route path="input" element={<InputPage />} />
+        <Route path="input" element={<InputPage fetchTodos={fetchTodos} />} />
       </Routes>
     </>
   );

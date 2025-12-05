@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const InputPage = () => {
+const InputPage = ({ fetchTodos }) => {
   const [task, setTask] = useState("");
-  const [date, setDate] = useState("");
+  const [dueDate, setDueDate] = useState("");
   const [category, setCategory] = useState("");
+  const navigate = useNavigate();
 
   const handleTaskInput = (e) => {
     const value = e.target.value;
@@ -15,7 +16,7 @@ const InputPage = () => {
   const handleDateInput = (e) => {
     const value = e.target.value;
 
-    setDate(value);
+    setDueDate(value);
   };
 
   const handleCategoryInput = (e) => {
@@ -24,10 +25,27 @@ const InputPage = () => {
     setCategory(value);
   };
 
-  const addToDo = () => {
-    console.log(task);
-    console.log(date);
-    console.log(category);
+  const addToDo = async () => {
+    const newTodo = {
+      task,
+      dueDate,
+      category,
+    };
+
+    const response = await fetch("http://localhost:3000/todos", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newTodo),
+    });
+
+    const result = await response.json();
+    console.log("server response ==>", result.message);
+
+    await fetchTodos();
+
+    navigate("/home");
   };
 
   return (
